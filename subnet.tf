@@ -17,3 +17,13 @@ resource "aws_subnet" "BasicSubnet-2" {
     "Name" = var.subnet_2_name
   }
 }
+
+resource "aws_subnet" "BasicSubnet-3" {
+  vpc_id                  = aws_vpc.BasicVPC.id
+  cidr_block              = var.Subnet_cidr_3
+  availability_zone       = var.az3
+  map_public_ip_on_launch = true
+  tags = {
+    "Name" = var.subnet_3_name
+  }
+}
